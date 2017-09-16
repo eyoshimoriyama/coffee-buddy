@@ -54,11 +54,7 @@ source 'https://rails-assets.org' do
 end
 
 
-# Pagination
-gem "will_paginate-bootstrap"
-
-# Simiple form
-gem "simple_form"
-
-# Font Awesome
-gem "font-awesome-rails"
+gem 'will_paginate-bootstrap'
+gem 'simple_form'
+gem 'font-awesome-rails'
+gem 'devise'
