@@ -6,12 +6,10 @@
 
 
   <% @place.photos.each do |photo| %>
-    <blockquote>
-      <%= image_tag photo.picture %>
-      <%= photo.caption %>
-    </blockquote>
+      <%= image_tag(photo.picture, :height=> "100%", :width=> "100%") %>
   <% end %>
   
+  <br />
 
   <% if @place.latitude.present? && @place.longitude.present? %>
 
