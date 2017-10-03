@@ -2,26 +2,28 @@
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+
   </ol>
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
-      <%= image_tag 'slider1.jpg', class: 'img-fluid' %>
+      <%= image_tag 'slider1.jpg', class: 'd-block img-fluid' %>
       <div class="carousel-caption d-none d-md-block">
-        <h3>Find the best restaurants</h3>
+        <h3>Find the best coffee spots</h3>
       </div>
     </div>
     <div class="carousel-item">
-      <%= image_tag 'slider2.jpg', class: 'img-fluid' %>
+      <%= image_tag 'slider2.jpg', class: 'd-block img-fluid' %>
       <div class="carousel-caption d-none d-md-block">
-        <h3>See reviews of popular spots</h3>
+        <h3>See ratings and reviews</h3>
       </div>
     </div>
     <div class="carousel-item">
-      <%= image_tag 'slider3.jpg', class: 'img-fluid' %>
+      <%= image_tag 'slider3.jpg', class: 'd-block img-fluid' %>
       <div class="carousel-caption d-none d-md-block">
-        <h3>Upload your own photos</h3>
+        <h3>Upload your favorite places</h3>
       </div>
+    </div>
+
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -34,9 +36,10 @@
 </div>
 
 
+
 <% @places.each do |place| %>
   <div class="booyah-box col-10 offset-1">
-    <h1><%= link_to place.name, place_path(place) %></h1><br />
+    <h1 class='place-title'><%= link_to place.name, place_path(place) %></h1><br />
     <i><%= place.address %></i><br /><br />
     <p><%= place.description %></p><br />
 

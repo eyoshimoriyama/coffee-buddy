@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Karla');
 
 .booyah-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -18,9 +19,19 @@ h1, h2, h3, h4, h5, h5 {
   padding: 0;
 }
 
+a {
+  color: #291926;
+}
+
+a:hover {
+  color: #291926;
+}
+
+
 body {
   background: image_url('subtle_grunge.png');
-  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  font-family: 'Karla', sans-serif;
+  font-size: 20px
 
 }
 
@@ -33,7 +44,7 @@ body {
 .navbar-inverse .navbar-brand {
   color: #fafafa;
   font-family: 'intro_rust_gbase_2_line', sans-serif;
-  font-size:26px;
+  font-size: 26px;
 }
 
 .digg_pagination {
@@ -81,19 +92,66 @@ blockquote p {
 }
 
 .carousel-inner > .carousel-item > img, .carousel-inner > .carousel-item > a > img {
+  display: block;
   max-height: 550px;
-  width: 100%
+  height: auto;
+  line-height: 1;
 }
+
+.carousel-inner > .carousel-item > img, .carousel-inner > .carousel-item > a > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; 
+  overflow: hidden;
+}
+
 
 .carousel-caption {
-  font-family: 'intro_head_rbase', sans-serif;
-  font-size: 100px;
-  font-weight: 150;
-  text-shadow: rgba(0, 0, 0, 0.95) 2px 3px;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%
+  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  font-size: 30px;
+  font-weight: 100;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  color: #7f7f7f;
 }
 
-carousel {
-  box-shadow: 0px 3px 8px #2a2a2a;
+/* Mobile */
+@media (max-width: 825px) {
+    .slider-size {
+        height: auto;
+    }
+    .slider-size > img {
+         width: 80%;
+    }
+}
+
+/* tablets */
+@media (max-width: 1280px) and (min-width: 700px) {
+    .slider-size {
+        height: auto;
+    }
+    .slider-size > img {
+        width: 80%;
+    }
+}
+
+/* laptops */
+@media (max-width: 1280px) and (min-width: 700px) {
+    .slider-size {
+         height: auto;
+    }
+    .slider-size > img {
+        width: 80%;
+    }
+}
+
+/* desktops */
+@media (max-width: 1280px) and (min-width: 700px) {
+    .slider-size {
+        height: auto;
+    }
+    .slider-size > img {
+        width: 60%;
+    }
 }
