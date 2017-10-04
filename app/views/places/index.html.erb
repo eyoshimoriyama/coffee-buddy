@@ -23,7 +23,6 @@
         <h3>Upload your favorite places</h3>
       </div>
     </div>
-
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -44,27 +43,38 @@
     <p><%= place.description %></p><br />
 
 
-  <% if place.photos.present? %>
-    <%= image_tag(place.photos.last.picture, :height=> "100%", :width=> "100%") %>
-  <% end %>
-  <% if place.comments.present? %>
-    <div class="col-12">
-      <blockquote>
-        <% if place.comments.last.humanized_rating.present? %>
-          <b><%= place.comments.last.humanized_rating %></b> -
-        <% end %>
-        <%= place.comments.last.message %>
-        <small><%= place.comments.last.user.email %></small>
-      </blockquote>
+    <% if place.photos.present? %>
+      <%= image_tag(place.photos.last.picture, :height=> "100%", :width=> "100%") %>
+    <% end %>
 
-  <% if place.user.present? %>
-      <small><%= place.user.email %></small>
-  <% end %>
+    <% if place.comments.present? %>
+      <div class="col-12">
+        <blockquote>
+          <% if place.comments.last.humanized_rating.present? %>
+            <b><%= place.comments.last.humanized_rating %></b> -
+          <% end %>
+          <%= place.comments.last.message %>
+          <small><%= place.comments.last.user.email %></small>
+        </blockquote>
+      </div>
+    <% end %>
 
-    </div>
-  <% end %>
+    <div class="clear"></div>
+    <br />
+
+    <% if place.user.present? %>
+      <div class="row">
+         <div class="col-1"> 
+            <%= image_tag 'user.png', class: 'user-icon' %>
+          </div>
+          <div class='username'>
+            <%= place.user.username%>
+          </div>
+      </div>
+    <% end %>
   </div>
 <% end %>
+
 
 
 <br />
