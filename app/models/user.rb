@@ -2,10 +2,21 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, 
+         :validatable, :authentication_keys => {email: true, login: false}
   has_many :places
   has_many :comments
+
+  validates :username,
+  :presence => true,
+  :uniqueness => {
+    :case_sensitive => false
+  } # etc.
+
   attr_accessor :login
+  attr_accessor :username
+
+  validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
