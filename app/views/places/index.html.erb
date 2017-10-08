@@ -1,5 +1,5 @@
 <div class="cover-photo">
-  <%= image_tag("slider1.jpg", :height=> "100%", :width=> "100%", class: 'cover-photo') %>
+  <%= image_tag("cover.jpg", :height=> "100%", :width=> "100%", class: 'cover-photo') %>
   <div class="cover-text">Find the best coffee.</div>
 </div>
 
@@ -43,10 +43,7 @@
   </div>
 <% end %>
 
-
-
 <br />
-
 
 <div class="digg_pagination">
   <%= will_paginate @places, previous_label: h("<"), next_label: h(">") %>
