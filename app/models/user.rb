@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, 
-         :validatable, :authentication_keys => [:login]
+         :validatable, :authentication_keys => {email: true, login: false}
   has_many :places
   has_many :comments
 
@@ -20,6 +20,7 @@ class User < ApplicationRecord
   def login
     @login || self.username || self.email
   end
+
 
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 

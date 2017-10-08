@@ -50,6 +50,7 @@ body {
 }
 
 .navbar {
+  position: static;
   background: image_url('mochaGrunge.png');
   box-shadow: 0px 1px 1px #2a2a2a;
   margin-bottom: 0;
@@ -106,6 +107,7 @@ blockquote p {
 }
 
 .cover-photo{
+  position: relative;
   height: 100%;
   width: 100%;
   max-height: 450px;
@@ -115,18 +117,20 @@ blockquote p {
 
 .cover-text {
     position: absolute;
-    top: 65%;
-    left: 10%;
+    left: 5%;
+    bottom: 5%;
 }
 
 .index-pictures{
-  max-height: 450px;
-  object-fit: contain; 
+  height: 100%;
+  max-height: 400px;
+  object-fit: cover; 
   overflow: hidden;
 }
+
 .carousel-inner > .carousel-item > img, .carousel-inner > .carousel-item > a > img {
   display: block;
-  max-height: 450px;
+  max-height: 400px;
   height: auto;
   line-height: 1;
 }
@@ -146,4 +150,8 @@ blockquote p {
   position: absolute;
   left: 0;
   color: #7f7f7f;
+}
+
+.btn {
+  font-family: 'Karla', sans-serif; 
 }
