@@ -22,7 +22,7 @@
             <b><%= place.comments.last.humanized_rating %></b> -
           <% end %>
           <%= place.comments.last.message %>
-          <small><%= " - " + place.comments.last.user.email %></small>
+          <small><%= " - " + place.comments.last.user.username %></small>
         </blockquote>
       </div>
     <% end %>
@@ -49,7 +49,7 @@
 
 
 <div class="digg_pagination">
-  <%= will_paginate @products, previous_label: h("<"), next_label: h(">") %>
+  <%= will_paginate @places, previous_label: h("<"), next_label: h(">") %>
 </div>
 
 
